@@ -317,18 +317,3 @@ for item in items:
     print("time split and prepare:", time.time()-stime)
 
     sad.evaluate_with_params(models_dict)
-    def TruncatedSVD_reconstruction_predict(self, X_test):
-        X_reduced = self.model.transform(X_test)
-        X_reconstructed = self.model.inverse_transform(X_reduced)
-
-        # Ensure both are numpy arrays and have the same shape
-        if not isinstance(X_test, np.ndarray):
-            X_test = X_test.toarray()  # Convert to dense format if it's sparse
-        if not isinstance(X_reconstructed, np.ndarray):
-            X_reconstructed = X_reconstructed.toarray()
-
-        # Calculate reconstruction error
-        self.model.scores = np.sum((X_test - X_reconstructed) ** 2, axis=1)
-        threshold = np.percentile(self.model.scores, 95)  # Example threshold
-        anos = self.model.scores > threshold
-        return anos

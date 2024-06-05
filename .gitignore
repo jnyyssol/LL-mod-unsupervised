@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+*.pyo
+private_data/
+*_wip.py
+

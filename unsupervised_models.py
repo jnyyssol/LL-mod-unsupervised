@@ -17,7 +17,7 @@ import time
 import numpy as np
 
 #Adjust full data source
-full_data = "C:/Users/jesse/Desktop/vanha ano det/next_event_prediction-main/log_pars/log_parsers"
+full_data = ""
 
 #List the representations (column names) for anomaly detection
 items = ["e_words","e_trigrams","e_event_id"]#,"e_trigrams","e_event_id"]# "e_trigrams","e_alphanumerics"
